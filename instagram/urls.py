@@ -6,6 +6,7 @@ router = DefaultRouter()
 router.register('post', views.PostViewSet)  # 2개의 URL 만들기
 
 urlpatterns = [
-    path('public/', views.PublicPostListAPIView.as_view()),
+    path('mypost/<int:pk>/', views.PostDetailAPIView.as_view()),
+    # path('public/', views.public_post_list),
     path('', include(router.urls)),
 ]
